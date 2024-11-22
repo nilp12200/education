@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Section - Educational PDF Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <header class="bg-green-500 text-white py-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Student Dashboard</h1>
+            <nav>
+                <a href="/" class="text-lg px-4 py-2 rounded hover:bg-green-700">Home</a>
+                <a href="/teacher/" class="text-lg px-4 py-2 rounded hover:bg-green-700">Teacher</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto mt-10">
+        <section class="text-center">
+            <h2 class="text-3xl font-semibold mb-4">Browse and Download PDFs</h2>
+            <p class="text-lg text-gray-600 mb-6">
+                Explore educational resources for your grade and subject.
+            </p>
+            <div class="flex justify-center gap-4">
+                <a href="{% url 'browse_pdfs' %}" class="bg-blue-500 text-white px-6 py-3 rounded shadow-lg hover:bg-blue-600">
+                    View PDFs
+                </a>
+                <a href="download" class="bg-green-500 text-white px-6 py-3 rounded shadow-lg hover:bg-green-600">
+                    Download PDFs
+                </a>
+            </div>
+        </section>
+
+        <section class="mt-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded shadow-lg">
+                    <h3 class="text-xl font-semibold mb-2">Grade 8 PDFs</h3>
+                    <p class="text-gray-600">Access subject-wise materials curated for grade 8 students.</p>
+                </div>
+                <div class="bg-white p-6 rounded shadow-lg">
+                    <h3 class="text-xl font-semibold mb-2">Grade 9 PDFs</h3>
+                    <p class="text-gray-600">Find resources for grade 9 students across all subjects.</p>
+                </div>
+                <div class="bg-white p-6 rounded shadow-lg">
+                    <h3 class="text-xl font-semibold mb-2">Grade 10 PDFs</h3>
+                    <p class="text-gray-600">Explore advanced materials for grade 10 preparation.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-4 mt-10">
+        <div class="container mx-auto text-center">
+            <p>© 2024 Educational PDF Portal. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

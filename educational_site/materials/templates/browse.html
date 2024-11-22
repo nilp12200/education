@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse PDFs - Educational PDF Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <!-- Header -->
+    <header class="bg-green-500 text-white py-4 shadow-lg">
+        <div class="container mx-auto px-4 sm:px-6 flex justify-between items-center">
+            <h1 class="text-2xl sm:text-3xl font-bold">Browse PDFs</h1>
+            <nav>
+                <a href="/" class="text-lg px-4 py-2 rounded hover:bg-green-700 {% if request.path == '/' %}bg-green-700{% endif %}">Home</a>
+                <a href="/teacher/" class="text-lg px-4 py-2 rounded hover:bg-green-700 {% if request.path == '/teacher/' %}bg-green-700{% endif %}">Teacher</a>
+                <a href="/student/" class="text-lg px-4 py-2 rounded hover:bg-green-700 {% if request.path == '/student/' %}bg-green-700{% endif %}">Student Dashboard</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto mt-10 px-4 sm:px-6">
+        <section class="text-center mb-8">
+            <h2 class="text-3xl sm:text-4xl font-semibold mb-4">Browse Educational PDFs</h2>
+            <p class="text-lg text-gray-600 mb-6">Select a grade to explore the available subject materials.</p>
+        </section>
+
+        <!-- PDF Grid Section -->
+        <section>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded shadow-lg">
+                    <h3 class="text-xl font-semibold mb-2">Grade 8 PDFs</h3>
+                    <p class="text-gray-600 mb-4">Explore subject-wise PDFs for grade 8 students.</p>
+                    <a href="{% url 'grade_8_pdfs' %}" class="bg-blue-500 text-white px-6 py-3 rounded shadow-lg hover:bg-blue-600" aria-label="Browse PDFs for Grade 8">
+                        View Grade 8 PDFs
+                    </a>
+                </div>
+                <div class="bg-white p-6 rounded shadow-lg">
+                    <h3 class="text-xl font-semibold mb-2">Grade 9 PDFs</h3>
+                    <p class="text-gray-600 mb-4">Access PDFs for grade 9 students across all subjects.</p>
+                    <a href="{% url 'grade_9_pdfs' %}" class="bg-blue-500 text-white px-6 py-3 rounded shadow-lg hover:bg-blue-600" aria-label="Browse PDFs for Grade 9">
+                        View Grade 9 PDFs
+                    </a>
+                </div>
+                <div class="bg-white p-6 rounded shadow-lg">
+                    <h3 class="text-xl font-semibold mb-2">Grade 10 PDFs</h3>
+                    <p class="text-gray-600 mb-4">Find advanced materials for grade 10 preparation.</p>
+                    <a href="{% url 'grade_10_pdfs' %}" class="bg-blue-500 text-white px-6 py-3 rounded shadow-lg hover:bg-blue-600" aria-label="Browse PDFs for Grade 10">
+                        View Grade 10 PDFs
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-4 mt-10">
+        <div class="container mx-auto text-center">
+            <p class="text-sm sm:text-base">&copy; 2024 Educational PDF Portal. All rights reserved.</p>
+            <nav class="text-sm">
+                <a href="/privacy" class="hover:underline">Privacy Policy</a> | 
+                <a href="/terms" class="hover:underline">Terms of Service</a> | 
+                <a href="/contact" class="hover:underline">Contact Us</a>
+            </nav>
+        </div>
+    </footer>
+</body>
+</html>

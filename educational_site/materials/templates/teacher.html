@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Section - Educational PDF Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <header class="bg-blue-500 text-white py-4 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Teacher Dashboard</h1>
+            <nav>
+                <a href="/" class="text-lg px-4 py-2 rounded hover:bg-blue-700">Home</a>
+                <a href="/student/" class="text-lg px-4 py-2 rounded hover:bg-blue-700">Student</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto mt-10">
+        <section class="text-center">
+            <h2 class="text-3xl font-semibold mb-4">Manage Educational PDFs</h2>
+            <p class="text-lg text-gray-600 mb-6">
+                Upload, edit, and organize PDFs for students across grades 8, 9, and 10.
+            </p>
+            <div class="flex justify-center gap-4">
+                <a href="{% url 'upload_pdf' %}" class="bg-blue-500 text-white px-6 py-3 rounded shadow-lg hover:bg-blue-600">
+                    Upload PDFs
+                </a>
+                <a href="{% url 'manage_pdfs' %}" class="bg-green-500 text-white px-6 py-3 rounded shadow-lg hover:bg-green-600">
+                    Manage PDFs
+                </a>
+            </div>
+        </section>
+
+        <section class="mt-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded shadow-lg">
+                    <h3 class="text-xl font-semibold mb-2">Upload PDFs</h3>
+                    <p class="text-gray-600">Add new PDFs and categorize them by subject and grade level.</p>
+                </div>
+                <div class="bg-white p-6 rounded shadow-lg">
+                    <h3 class="text-xl font-semibold mb-2">Edit PDFs</h3>
+                    <p class="text-gray-600">Update titles, rename files, or re-categorize existing PDFs.</p>
+                </div>
+                <div class="bg-white p-6 rounded shadow-lg">
+                    <h3 class="text-xl font-semibold mb-2">Delete PDFs</h3>
+                    <p class="text-gray-600">Remove outdated or unnecessary materials with ease.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-4 mt-10">
+        <div class="container mx-auto text-center">
+            <p>© 2024 Educational PDF Portal. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
