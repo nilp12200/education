@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload PDF - Educational PDF Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <!-- Header -->
+    <header class="bg-blue-500 text-white py-4 shadow-lg">
+        <div class="container mx-auto px-4 flex justify-between items-center flex-wrap gap-4">
+            <h1 class="text-xl sm:text-2xl font-bold">Upload PDF</h1>
+            <nav class="flex gap-4 flex-wrap">
+                <a href="/" class="text-sm sm:text-lg px-4 py-2 rounded hover:bg-blue-700">Home</a>
+                <a href="/teacher/" class="text-sm sm:text-lg px-4 py-2 rounded hover:bg-blue-700">Teacher Dashboard</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto mt-10 px-4 sm:px-0">
+        <!-- Section Title -->
+        <section class="text-center">
+            <h2 class="text-2xl sm:text-3xl font-semibold mb-4">Upload a New Educational PDF</h2>
+            <p class="text-sm sm:text-lg text-gray-600 mb-6">
+                Upload a PDF and categorize it by grade and subject for student access.
+            </p>
+        </section>
+
+        <!-- Upload Form -->
+        <section class="max-w-4xl mx-auto bg-white p-4 sm:p-6 rounded shadow-lg">
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <!-- PDF File Input -->
+                <div class="mb-4">
+                    <label for="pdf_file" class="block text-sm sm:text-lg font-semibold mb-2">PDF File</label>
+                    <input type="file" name="pdf_file" id="pdf_file" class="w-full p-3 border rounded" required>
+                </div>
+
+                <!-- PDF Name Input -->
+                <div class="mb-4">
+                    <label for="name" class="block text-sm sm:text-lg font-semibold mb-2">Name</label>
+                    <input type="text" name="name" id="name" class="w-full p-3 border rounded" required>
+                </div>
+
+                <!-- Subject Dropdown -->
+                <div class="mb-4">
+                    <label for="subject" class="block text-sm sm:text-lg font-semibold mb-2">Subject</label>
+                    <select name="subject" id="subject" class="w-full p-3 border rounded" required>
+                        <option value="Math">Math</option>
+                        <option value="Science">Science</option>
+                        <option value="English">English</option>
+                        <option value="Social Studies">Social Studies</option>
+                    </select>
+                </div>
+
+                <!-- Grade Dropdown -->
+                <div class="mb-4">
+                    <label for="grade" class="block text-sm sm:text-lg font-semibold mb-2">Grade</label>
+                    <select name="grade" id="grade" class="w-full p-3 border rounded" required>
+                        <option value="Grade 8">Grade 8</option>
+                        <option value="Grade 9">Grade 9</option>
+                        <option value="Grade 10">Grade 10</option>
+                    </select>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="mb-4 text-right">
+                    <button type="submit" class="bg-blue-500 text-white px-6 py-3 rounded shadow-lg hover:bg-blue-600">
+                        Upload PDF
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-4 mt-10">
+        <div class="container mx-auto text-center px-4">
+            <p class="text-sm sm:text-base">© 2024 Educational PDF Portal. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
